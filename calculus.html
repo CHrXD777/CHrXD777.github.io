@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-08-21 日 13:50 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="RyanLray" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" type="text/css" href="./css/worg.css"/>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+
+<div id="outline-container-org058a4ca" class="outline-2">
+<h2 id="org058a4ca">一次函数下的理解</h2>
+<div class="outline-text-2" id="text-org058a4ca">
+<p>
+求 表示变化快慢(瞬间) 的函数2 下的面积 的函数1(总和) 即为积分(函数2是函数1的导数)
+</p>
+
+<p>
+反之 为微分
+</p>
+
+<p>
+\(\frac{df}{dt}\) 为 求无限细分后的面积(瞬间) (为了求不规则图形的面积)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1756737" class="outline-2">
+<h2 id="org1756737">总览微积分</h2>
+<div class="outline-text-2" id="text-org1756737">
+<p>
+有二函数 累积（总）与速率（瞬时）
+</p>
+
+<p>
+丢失其一，如何找到另一
+</p>
+
+<p>
+slope：\(\frac{dy}{dx}\)
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">main fun</th>
+<th scope="col" class="org-left">derivative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">y = x<sup>n</sup></td>
+<td class="org-left">n*x<sup>n</sup>-1</td>
+</tr>
+
+<tr>
+<td class="org-left">y = sin(x)</td>
+<td class="org-left">cos(x)</td>
+</tr>
+
+<tr>
+<td class="org-left">y = e<sup>x</sup></td>
+<td class="org-left">e<sup>x</sup></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+求slope = 0 是微积分的一个重点应用
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0e788de" class="outline-2">
+<h2 id="org0e788de">极值与二阶导数</h2>
+<div class="outline-text-2" id="text-org0e788de">
+<p>
+二阶导数（处理极大极小值很有用）
+</p>
+
+<p>
+一阶导数：定位极值（导数值或slope为0）
+</p>
+
+<p>
+二阶导数：判断是极小或极大值
+</p>
+
+<p>
+符号：表示曲线弯曲方向
+</p>
+
+<p>
+f'' &gt; 0 为凸
+</p>
+
+<p>
+f'' &lt; 0 为凹 
+</p>
+
+<p>
+二阶导数 &lt; 0 极大值
+</p>
+
+<p>
+二阶导数 &gt; 0 极小值
+</p>
+
+<p>
+驻点：函数一阶导数为0
+</p>
+
+<p>
+二阶导数 = 0处 在原函数上对应的点为拐点inflection point（二维点）
+</p>
+
+<p>
+加入函数3：变化率的变化率（加速度）即二阶导数
+</p>
+
+<p>
+最值的一般求法：比较所有驻点（f'=0）处及边界点函数值，得到最大或最小值即函数最值
+</p>
+
+<p>
+Set the derivative to zero, and solve. Locate maximum points, minimum points.
+</p>
+
+<p>
+key:\(\frac{dy}{dx}\) = y
+</p>
+
+<p>
+e<sup>x</sup> &times; e<sup>X</sup> = e<sup>(x+X)</sup>
+</p>
+
+<p>
+因为e<sup>x的导数</sup>=e<sup>x</sup>
+</p>
+
+<p>
+所以
+</p>
+
+<p>
+函数2 到 函数1 求y即是对s（变化量/率）的值累加
+</p>
+</div>
+
+<div id="outline-container-org5b156c3" class="outline-3">
+<h3 id="org5b156c3">求积分:</h3>
+<div class="outline-text-3" id="text-org5b156c3">
+</div>
+<div id="outline-container-org32b81b7" class="outline-3">
+<h3 id="org32b81b7">方法A：</h3>
+<div class="outline-text-3" id="text-org32b81b7">
+<p>
+与微分联系起来：函数2 到 函数1 （积分）即是对 s（变化量/率）的值的累加
+</p>
+
+<p>
+\(\sum \Delta y = y_{last}- y_{first}\), 即求和(\(\frac{\Delta y}{\Delta x}\)) &Delta; x
+</p>
+
+
+<p>
+所以 \(\int \frac{dy}{dx} dx\)为积分写法
+</p>
+</div>
+</div>
+
+<div id="outline-container-org612cd46" class="outline-3">
+<h3 id="org612cd46">方法B：</h3>
+<div class="outline-text-3" id="text-org612cd46">
+<p>
+积分 = 函数1 = 函数2图像下的面积
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc4b459e" class="outline-2">
+<h2 id="orgc4b459e">极限和连续</h2>
+<div class="outline-text-2" id="text-orgc4b459e">
+<p>
+ &epsilon; 很小
+ratio 比值
+ DANGER:
+</p>
+<ul class="org-ul">
+<li>&infin; - &infin;</li>
+<li>0 &sdot; &infin;</li>
+<li>\(\frac{0}{0}\)最常见</li>
+<li>\(\frac{\infty}{\infty}\)</li>
+<li>0<sup>0</sup></li>
+<li>1<sup>&infin;</sup></li>
+</ul>
+</div>
+<div id="outline-container-org526c59b" class="outline-3">
+<h3 id="org526c59b">\(\frac{0}{0}\)</h3>
+<div class="outline-text-3" id="text-org526c59b">
+<p>
+有二函数，当x趋于0时趋于0 ，求二函数比值ratio
+</p>
+
+<p>
+要看谁变化得快&#x2013;洛必达（L'Hospital）法则（斜率良好时使用，像\(\sqrt{x}\)就无法使用了）
+</p>
+
+<p>
+\(\frac{f(x)}{g(x)}\) &rarr; \(\frac{\Delta f(x)}{\Delta g(x)}\) &rarr; \(\frac{\frac{\Delta f(x)}{\Delta x}}{\frac{\Delta g(x)}{\Delta x}}\) &rarr; \(\frac{f'}{g'}\)
+</p>
+
+<p>
+所以，求斜率、即求微分
+</p>
+
+<p>
+&epsilon; 与 &delta;
+</p>
+
+<p>
+&epsilon; 横带 &delta; 竖带
+</p>
+
+<p>
+当&vert; x-a&vert; &lt; &delta; 则 &vert; f(x) - f(a)&vert; &lt; &epsilon; 则函数连续
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5eb0ac9" class="outline-3">
+<h3 id="org5eb0ac9">\(\sin{x}\) and \(\cos{x}\)</h3>
+<div class="outline-text-3" id="text-org5eb0ac9">
+<p>
+勾股定理：a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup> &rarr; \(\frac{\frac{a^2}{c^2}}{\frac{b^2}{c^2}}\) = 1 &rarr; (\(\cos{\theta}\))<sup>2</sup> +(\(\sin{\theta}\))<sup>2</sup> = 1
+</p>
+
+<p>
+证明
+</p>
+
+<p>
+\(\displaystyle\lim_{\theta\to 0} \frac{\sin{\theta}}{\theta}\) = 1
+</p>
+
+<p>
+1.\(\sin{\theta}\) &lt; &theta; | &theta; &gt; 0
+</p>
+
+<p>
+2.\(\tan{\theta}\) &gt; &theta; | 0 &lt; &theta; &lt; \(\frac{\pi}{2}\)
+</p>
+
+<p>
+3.\(\frac{\sin{\theta}}{\cos{\theta}}\) &gt; &theta; | \(\frac{\sin{\theta}}{\theta}\) &gt; \(\cos{\theta}\)
+</p>
+
+<p>
+\(\frac{\Delta\sin{x}}{\Delta x}\) = \(\frac{\Delta\sin{(x+\Delta x)} - \Delta\sin{\Delta x}}{\Delta x}\)
+</p>
+
+<p>
+两角和公式：
+</p>
+
+<p>
+\(\sin{(x+\Delta x)}\) = \(sin{x}\cos{\Delta x} + \cos{x}\sin{\Delta x}\)
+</p>
+
+<p>
+等式两边同时变化：
+</p>
+
+<p>
+\(\frac{\Delta\sin{(x+\Delta x)} - \Delta\sin{\Delta x}}{\Delta x} = \frac{\sin{x}\overbrace{(\cos{\Delta x - 1})}^{=0}}{\underbrace{\Delta x}_{①}} + \frac{\cos{x}\overbrace{\sin{\Delta x}}^{=1}}{\underbrace{\Delta x}_{②}}\)
+</p>
+
+<p>
+对于②：已证为1；易知①为0，所以证得\(\sin{x}\)的导数为\(\cos{x}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd3a7cd0" class="outline-3">
+<h3 id="orgd3a7cd0">导数乘法、除法法则</h3>
+<div class="outline-text-3" id="text-orgd3a7cd0">
+<ul class="org-ul">
+<li>\(p(x) = f(x)g(x)\) | \(\frac{dp}{dx} = f(x)\frac{dg}{dx} + g(x)\frac{df}{dx}\)</li>
+
+<li>\( q(x) = \frac{f(x)}{g(x)}\) | \(\frac{dq}{dx} = \frac{g\frac{df}{dx} - f\frac{dg}{dx}}{g^2}\)</li>
+</ul>
+<p>
+-&#x2014;下乘上导，减上乘下导，再除下的平方。
+</p>
+
+<p>
+推广幂法则，用乘法、除法法则验证了幂法则在正幂次与负幂次都适用。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org741098a" class="outline-3">
+<h3 id="org741098a">The chain rule链式法则(链式函数求导法则)</h3>
+<div class="outline-text-3" id="text-org741098a">
+<p>
+chain function: \(f(g(x))\)
+</p>
+
+<p>
+\(y = g(x)\) | \(z = f(y)\)
+</p>
+
+<p>
+\(\frac{dz}{dx} = \frac{dz}{dy}\cdot\frac{dy}{dx}\)
+</p>
+
+<p>
+-&#x2014;乘后代入y使导数式子是对x导，有时需要结合导数四则运算法则计算。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3875094" class="outline-3">
+<h3 id="org3875094">逆函数、对数函数</h3>
+<div class="outline-text-3" id="text-org3875094">
+</div>
+<div id="outline-container-orgeb92daf" class="outline-3">
+<h3 id="orgeb92daf">指数函数的逆函数：</h3>
+<div class="outline-text-3" id="text-orgeb92daf">
+<p>
+自然对数：\(x = \ln y\)
+</p>
+
+<p>
+逆函数：\(y = f(x) \ and \ x = f^{-1}(y)\) -&#x2014;只有双射才能有逆函数（必须单调？）且斜率是原函数斜率的倒数
+</p>
+
+<p>
+性质：
+</p>
+<ul class="org-ul">
+<li>\(\ln(y\cdot Y) = \ln y + \ln Y\)</li>
+<li>\(\ln (y^n) = n\ln y\)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaf4ca75" class="outline-3">
+<h3 id="orgaf4ca75">\(\ln y\) 和 \(\sin^-1(y) (arcsin)\)的导数</h3>
+<div class="outline-text-3" id="text-orgaf4ca75">
+<ul class="org-ul">
+<li>\(\frac{d}{dy} \ln y = \frac{1}{y}\)</li>
+<li>\(\arcsin y =  \frac{1}{\sqrt{1 - y^2}}\)</li>
+<li><p>
+\(\arccos y = -\frac{1}{\sqrt{1 - y^2}}\)
+</p>
+
+<p>
+\(\frac{d}{dy}(\arcsin y + \arccos y) = 0\) \(\rightarrow\) \(\arcsin y + arccos y = \) 常数（\(\frac{\pi}{2}\)）
+</p>
+
+<p>
+函数与反函数就像一条路径，先A\(\rightarrow\)B,再B\(\rightarrow\)A
+</p>
+
+<p>
+由以上思想可得\(e^{\ln y} = y\)，两边求导验证对数的导数为\(\frac{1}{y}\)
+</p>
+
+<p>
+所以对\(\arcsin\)函数：\(x = \sin^{-1}y = \arcsin y\)，则\(y = \sin(sin^{-1}y)\)
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0efa5e3" class="outline-3">
+<h3 id="org0efa5e3">增长率和对数图</h3>
+<div class="outline-text-3" id="text-org0efa5e3">
+<p>
+对数应用，可以将很大或很小的值的尺度变小。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9620798" class="outline-3">
+<h3 id="org9620798">线性近似、牛顿法</h3>
+<div class="outline-text-3" id="text-org9620798">
+<p>
+线性近似：\(f(x) \approx f(a) + (x - a)f'(a)\)-&#x2014;在解附近取一点a，在a点沿切线方向近似
+</p>
+
+<p>
+牛顿法：\(x-a \approx \frac{f(a)}{f'(a)}\)
+</p>
+
+<p>
+牛顿法可多次近似（a取前一次近似的结果）
+</p>
+</div>
+</div>
+
+<div id="outline-container-org256d8db" class="outline-3">
+<h3 id="org256d8db">幂级数、欧拉公式</h3>
+<div class="outline-text-3" id="text-org256d8db">
+<p>
+幂级数：1 | x | x<sup>2</sup> | x<sup>3</sup> | \(\cdots\)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: RyanLray</p>
+<p class="date">Created: 2022-08-21 日 13:50</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
